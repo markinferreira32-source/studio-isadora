@@ -2,142 +2,349 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="Abr2Qp8XdiYUjiOYAulCiIbqdDBBpsbrXUXOmZyg-tA" />
   <title>Beauty Studio | Isadora Rocha</title>
+
+  <!-- Google Fonts: Cormorant Garamond + Jost -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-<canvas id="ribbon-canvas"></canvas>
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
 
+  <!-- Glitter canvas -->
+  <canvas id="glitter-canvas"></canvas>
 
-<header>
-  <img src="imagem/img logo.png" alt="Logo do Studio" class="logo">
-
-  <!-- Ícone do menu -->
-  <div class="menu-icon" id="menuIcon">&#9776;</div>
-
-  <!-- Menu -->
-  <nav class="nav-menu" id="navMenu">
-    <a href="#sobre">Sobre</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#agendamento">Agendar</a>
-    <a href="#contato">Contato</a>
-    <a href="#cursos">Cursos</a>
-  </nav>
-</header>
-
-
-<section class="hero" id="inicio">
-  <div class="hero-content">
-    <h1 class="cinematic-text">Aqui, cada olhar é único!</h1>
-    <p class="cinematic-text">Atendimento com amor, cuidado e profissionalismo.</p>
-
-    <a href="#agendamento"><button class="btn">Agendar Agora</button></a>
-  </div>
-</section>
-
-<section class="sobre" id="sobre">
-  <h2>Sobre o Studio</h2>
-  <p>Somos um Studio especializado em design de sobrancelhas e beleza facial. Nosso compromisso é realçar a beleza natural de cada cliente, proporcionando uma experiência única de cuidado, conforto e autoestima.</p>
-</section>
-
-<section class="servicos" id="servicos">
-  <h2>Nossos Serviços</h2>
-  <div class="servicos-cards">
-    <div class="card">
-      <img src="imagem/Henna opção 2.jpeg" alt="Design com Henna">
-      <h3>Design com Henna</h3>
-      <p>✨ Realça o formato das sobrancelhas com pigmento natural, deixando o olhar mais definido e harmonioso. 🌿</p>
+  <!-- ===== HEADER ===== -->
+  <header id="mainHeader">
+    <div class="header-inner">
+      <img src="imagem/img logo bege.png" alt="Beauty Studio Isadora Rocha" class="logo">
+      <div class="menu-icon" id="menuIcon" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </div>
+      <nav class="nav-menu" id="navMenu">
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#cursos" class="nav-link">Cursos</a>
+        <a href="#agendamento" class="nav-link nav-cta">Agendar</a>
+      </nav>
     </div>
-    <div class="card">
-      <img src="imagem/Brow opção 2.jpeg" alt="Brow Lamination">
-      <h3>Brow Lamination</h3>
-      <p>✨ Alinha e modela os fios das sobrancelhas, deixando-os mais definidos, uniformes e com aparência natural. 🌿</p>
-    </div>
-    <div class="card">
-      <img src="imagem/Glow Lips.jpeg" alt="Glow Lips">
-      <h3>Glow Lips</h3>
-      <p>💋 Hidrata e realça os lábios, proporcionando cor suave, brilho natural e aspecto saudável. ✨</p>
-    </div>
-    <div class="card">
-      <img src="imagem/tintura.jpeg" alt="Design com tintura">
-      <h3>Design com tintura</h3>
-      <p>✨ Técnica que modela as sobrancelhas e aplica uma tintura suave nos fios, realçando o formato, preenchendo falhas e deixando o olhar mais definido e harmonioso por mais tempo.🌿</p>
-    </div>
-    <div class="card">
-      <img src="imagem/spa das sobrancelhas.jpeg" alt="Design com tintura">
-      <h3>SPA de Sobrancelhas</h3>
-      <p>✨ O SPA de Sobrancelhas é um tratamento de revitalização e embelezamento que vai além do design tradicional. É focado na saúde dos fios e da pele da região.🌿</p>
-    </div>
-    <div class="card">
-      <img src="imagem/epilação opção 2.jpeg" alt="Design com tintura">
-      <h3>Epilação Egípcia</h3>
-      <p>🧵 A Epilação Egípcia, é um método milenar e muito preciso de remoção de pelos. É especialmente indicada pela sua alta precisão e por não ser agressiva quimicamente.🌿</p>
-    </div>
-    <div class="card">
-      <img src="imagem/Lasg Lifting.jpeg" alt="Design com tintura">
-      <h3>Lash Lifting</h3>
-      <p>👁️ O Lash Lifting é um procedimento estético que visa curvar, alinhar e dar a impressão de cílios mais longos e volumosos, sem a necessidade de extensões (cílios postiços).🌿</p>
-    </div>
-    <div class="card">
-      <img src="imagem/design masculino.jpeg" alt="Design com tintura">
-      <h3>Design de Sobrancelhas Masculino</h3>
-      <p>🧔‍♂️ É um procedimento de limpeza e alinhamento que organiza as sobrancelhas do homem, mantendo a espessura e a naturalidade.🌿</p>
-    </div>
+  </header>
 
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal-up">✦ Beauty Studio Isadora Rocha ✦</p>
+      <h1 class="hero-title">
+        <span class="line reveal-line">Aqui Cada olhar</span>
+        <span class="line reveal-line italic">é único.</span>
+      </h1>
+      <p class="hero-subtitle reveal-up">Atendimento com amor, cuidado e profissionalismo.</p>
+      <div class="hero-actions reveal-up">
+        <a href="#agendamento" class="btn btn-primary magnetic">Agendar Agora</a>
+        <a href="#servicos" class="btn btn-ghost magnetic">Ver Serviços</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Role para baixo</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
-  </div> <!-- fecha .servicos-cards -->
-</section> <!-- fecha section.servicos -->
+  <!-- ===== SOBRE ===== -->
+  <section class="sobre" id="sobre">
+    <div class="container">
+      <div class="sobre-grid">
+        <div class="sobre-text">
+          <p class="section-eyebrow reveal-up">Nossa história</p>
+          <h2 class="section-title reveal-up">A arte de <em>realçar</em> sua beleza natural</h2>
+          <p class="sobre-desc reveal-up">
+            Somos um Studio especializado em design de sobrancelhas e beleza facial.
+            Nosso compromisso é realçar a beleza natural de cada cliente,
+            proporcionando uma experiência única de cuidado, conforto e autoestima.
+          </p>
+          <a href="#servicos" class="btn btn-outline reveal-up magnetic">Conheça os Serviços</a>
+        </div>
+        <div class="sobre-stats reveal-up">
+          <div class="stat-item">
+            <span class="stat-number" data-target="500">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Clientes atendidas</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="5">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Anos de experiência</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="8">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Serviços disponíveis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Decorative flourish -->
+    <div class="flourish flourish-left"></div>
+  </section>
 
-<!-- ======= SESSÃO: CURSO (imagem + botão WhatsApp) ======= -->
-<section id="cursos" class="cursos-section course-single">
-  <div class="course-wrap">
-    <h2 class="sr-only">Cursos</h2>
-    <p class="course-intro">Conheça nossos cursos e treinamentos práticos para designers de sobrancelhas.</p>
+  <!-- ===== SERVIÇOS ===== -->
+  <section class="servicos" id="servicos">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow reveal-up">O que oferecemos</p>
+        <h2 class="section-title reveal-up">Nossos <em>Serviços</em></h2>
+        <p class="section-subtitle reveal-up">Cada tratamento é pensado para realçar o melhor de você</p>
+      </div>
 
-    <div class="course-card">
-      <!-- Imagem do curso: substitua o src pelo seu arquivo -->
-      <img src="imagem/Isadora Rocha.png" alt="Curso Básico de Design de Sobrancelhas" class="course-image" loading="lazy">
+      <div class="servicos-grid">
+        <div class="service-card reveal-card" data-delay="0">
+          <div class="card-image-wrap">
+            <img src="imagem/Henna opção 2.jpeg" alt="Design com Henna" loading="lazy">
+            <div class="card-shimmer"></div>
+          </div>
+          <div class="card-body">
+            <h3>Design com Henna</h3>
+            <p>Realça o formato das sobrancelhas com pigmento natural, deixando o olhar mais definido e harmonioso.</p>
+          </div>
+          <div class="card-glow"></div>
+        </div>
 
-      <!-- Botão que direciona para WhatsApp. Substitua o número e a mensagem conforme desejar. -->
-      <a class="btn-whatsapp" 
-         href="https://wa.me/message/2V6W6FCEZWHPE1"
-         target="_blank" rel="noopener noreferrer">
-        Quero saber mais
+        <div class="service-card reveal-card" data-delay="100">
+          <div class="card-image-wrap">
+            <img src="imagem/Brow opção 2.jpeg" alt="Brow Lamination" loading="lazy">
+            <div class="card-shimmer"></div>
+          </div>
+          <div class="card-body">
+            <h3>Brow Lamination</h3>
+            <p>Alinha e modela os fios, deixando as sobrancelhas mais definidas, uniformes e com aparência natural.</p>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+
+        <div class="service-card reveal-card" data-delay="200">
+          <div class="card-image-wrap">
+            <img src="imagem/Glow Lips.jpeg" alt="Glow Lips" loading="lazy">
+            <div class="card-shimmer"></div>
+          </div>
+          <div class="card-body">
+            <h3>Glow Lips</h3>
+            <p>Hidrata e realça os lábios, proporcionando cor suave, brilho natural e aspecto saudável.</p>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+
+        <div class="service-card reveal-card" data-delay="0">
+          <div class="card-image-wrap">
+            <img src="imagem/tintura.jpeg" alt="Design com Tintura" loading="lazy">
+            <div class="card-shimmer"></div>
+          </div>
+          <div class="card-body">
+            <h3>Design com Tintura</h3>
+            <p>Modela as sobrancelhas e aplica tintura suave, preenchendo falhas e definindo o olhar por mais tempo.</p>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+
+        <div class="service-card reveal-card" data-delay="100">
+          <div class="card-image-wrap">
+            <img src="imagem/spa das sobrancelhas.jpeg" alt="SPA de Sobrancelhas" loading="lazy">
+            <div class="card-shimmer"></div>
+          </div>
+          <div class="card-body">
+            <h3>SPA de Sobrancelhas</h3>
+            <p>Tratamento de revitalização focado na saúde dos fios e da pele, indo além do design tradicional.</p>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+
+        <div class="service-card reveal-card" data-delay="200">
+          <div class="card-image-wrap">
+            <img src="imagem/epilação opção 2.jpeg" alt="Epilação Egípcia" loading="lazy">
+            <div class="card-shimmer"></div>
+          </div>
+          <div class="card-body">
+            <h3>Epilação Egípcia</h3>
+            <p>Método milenar e preciso de remoção de pelos, não agressivo quimicamente e com alta precisão.</p>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+
+        <div class="service-card reveal-card" data-delay="50">
+          <div class="card-image-wrap">
+            <img src="imagem/Lasg Lifting.jpeg" alt="Lash Lifting" loading="lazy">
+            <div class="card-shimmer"></div>
+          </div>
+          <div class="card-body">
+            <h3>Lash Lifting</h3>
+            <p>Procedimento que curva e alonga os cílios, proporcionando aparência mais aberta e volumosa.</p>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+
+        <div class="service-card reveal-card" data-delay="150">
+          <div class="card-image-wrap">
+            <img src="imagem/design masculino.jpeg" alt="Design Masculino" loading="lazy">
+            <div class="card-shimmer"></div>
+          </div>
+          <div class="card-body">
+            <h3>Design Masculino</h3>
+            <p>Limpeza e alinhamento que organiza as sobrancelhas mantendo a espessura e naturalidade.</p>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ===== PARCERIA MENELA ===== -->
+<section id="parceria" class="parceria">
+  <div class="container">
+    <div class="parceria-inner reveal-up">
+      <p class="section-eyebrow">Parceria oficial</p>
+      <div class="parceria-logo-wrap">
+        <img src="imagem/menela-logo.png" alt="Marca Menela" class="parceria-logo">
+      </div>
+      <p class="parceria-desc">
+        O Beauty Studio Isadora Rocha é parceiro oficial da marca <strong>Menela</strong> — 
+        referência em produtos profissionais de beleza. 
+        Todos os nossos atendimentos utilizam a linha Menela, 
+        garantindo resultados superiores e cuidado com sua pele.
+      </p>
+      <a href="https://www.menela.com.br" target="_blank" rel="noopener noreferrer" class="btn btn-outline magnetic">
+        Conheça a Menela
       </a>
     </div>
   </div>
 </section>
 
-<!-- Feedbacks -->
-<section id="feedbacks" class="feedbacks">
-  <h3>Feedbacks das alunas:</h3>
+  <!-- ===== AGENDAMENTO CTA (banner) ===== -->
+  <section class="cta-banner">
+    <div class="cta-inner reveal-up">
+      <p class="cta-eyebrow">✦ Pronta para se sentir incrível? ✦</p>
+      <h2 class="cta-title">Reserve seu momento de beleza</h2>
+      <a href="https://web.pritweb.app/business/beauty-studio-isadora-rocha" target="_blank" class="btn btn-primary magnetic">
+        Agendar Agora
+      </a>
+    </div>
+  </section>
 
-<div class="feedback-images">
-  <img src="imagem/dany.png" alt="Feedback 1">
-  <img src="imagem/heliza.png" alt="Feedback 2">
-  <img src="imagem/Tamara.jpg" alt="Feedback 3">
-  <img src="imagem/bruna.png" alt="Feedback 4">
-</div>
+  <!-- ===== CURSOS ===== -->
+  <section id="cursos" class="cursos-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow reveal-up">Aprenda com a profissional</p>
+        <h2 class="section-title reveal-up">Nossos <em>Cursos</em></h2>
+      </div>
+      <div class="curso-layout">
+        <div class="curso-image-wrap reveal-up">
+          <img src="imagem/Isadora Rocha.png" alt="Curso com Isadora Rocha" class="curso-img">
+          <div class="curso-badge">
+            <span>✦</span>
+            <span>Especialista</span>
+          </div>
+        </div>
+        <div class="curso-content reveal-up">
+          <p class="curso-intro">
+            Transforme sua paixão por beleza em uma carreira profissional.
+            Aprenda técnicas exclusivas diretamente com Isadora Rocha, 
+            especialista em design de sobrancelhas com anos de experiência.
+          </p>
+          <ul class="curso-features">
+            <li><span class="feature-icon">✦</span> Treinamento prático e completo</li>
+            <li><span class="feature-icon">✦</span> Material didático incluso</li>
+            <li><span class="feature-icon">✦</span> Certificado de conclusão</li>
+            <li><span class="feature-icon">✦</span> Suporte pós-curso</li>
+          </ul>
+          <a class="btn btn-primary magnetic"
+             href="https://wa.me/message/2V6W6FCEZWHPE1"
+             target="_blank" rel="noopener noreferrer">
+            Quero saber mais
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ===== FEEDBACKS ===== -->
+  <section id="feedbacks" class="feedbacks">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow reveal-up">Depoimentos</p>
+        <h2 class="section-title reveal-up">O que nossas <em>alunas dizem</em></h2>
+      </div>
+      <div class="feedback-track-wrap">
+        <div class="feedback-track" id="feedbackTrack">
+          <div class="feedback-slide">
+            <img src="imagem/dany.png" alt="Feedback - Dany" loading="lazy">
+          </div>
+          <div class="feedback-slide">
+            <img src="imagem/heliza.png" alt="Feedback - Heliza" loading="lazy">
+          </div>
+          <div class="feedback-slide">
+            <img src="imagem/Tamara.jpg" alt="Feedback - Tamara" loading="lazy">
+          </div>
+          <div class="feedback-slide">
+            <img src="imagem/bruna.png" alt="Feedback - Bruna" loading="lazy">
+          </div>
+        </div>
+        <div class="feedback-controls">
+          <button class="fb-btn" id="fbPrev" aria-label="Anterior">&#8592;</button>
+          <div class="fb-dots" id="fbDots"></div>
+          <button class="fb-btn" id="fbNext" aria-label="Próximo">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</section> <!-- fecha section#feedbacks -->
+  <!-- ===== AGENDAMENTO ===== -->
+  <section id="agendamento" class="agendamento">
+    <div class="container">
+      <div class="agendar-box reveal-up">
+        <p class="section-eyebrow">Sua vez de brilhar</p>
+        <h2 class="section-title">Agende seu <em>horário</em></h2>
+        <p class="agendar-desc">Escolha o melhor dia e horário para você. Estamos esperando por você!</p>
+        <a href="https://web.pritweb.app/business/beauty-studio-isadora-rocha" target="_blank" class="btn btn-primary btn-large magnetic">
+          Agendar Horário
+        </a>
+      </div>
+    </div>
+    <div class="flourish flourish-right"></div>
+  </section>
 
-<section id="agendamento">
-  <h2>Agende seu horário</h2>
-  <p>Clique abaixo para escolher o melhor dia e horário para você!</p>
-  <a href="https://web.pritweb.app/business/beauty-studio-isadora-rocha" target="_blank">
-    <button class="btn" >Agendar horario</button></a>
-</section>
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <img src="imagem/img logo.png" alt="Beauty Studio Isadora Rocha" class="footer-logo">
+      <div class="footer-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#cursos">Cursos</a>
+        <a href="#agendamento">Agendar</a>
+      </div>
+      <p class="footer-copy">© 2025 Beauty Studio Isadora Rocha · Desenvolvido por <a href="#">Marco Antonio</a></p>
+    </div>
+  </footer>
 
-<footer>
-  <p>© 2025 Studio de Sobrancelhas | Desenvolvido por <a href="#">Marco Antonio</a></p>
-</footer>
+  <!-- Botão whatsapp -->
+  <a class="whatsapp-float" href="https://wa.me/message/2V6W6FCEZWHPE1" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.099 1.508 5.83L.057 23.25c-.07.254.162.486.416.416l5.42-1.451A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.716.995.993-3.63-.235-.374A9.818 9.818 0 1112 21.818z"/>
+  </svg>
+</a>
 
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
